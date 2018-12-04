@@ -1,5 +1,6 @@
-# Copyright (c) 2008-2017, Puzzle ITC GmbH. This file is part of
-# Cryptopus and licensed under the Affero General Public License version 3 or later.
+# Copyright (c) 2008-2018, Puzzle ITC GmbH.
+# This file is part of Cryptopus and licensed under
+# the Affero General Public License version 3 or later.
 # See the COPYING file at the top-level directory or at
 # https://github.com/puzzle/cryptopus.
 
@@ -7,13 +8,13 @@ app = window.App ||= {}
 
 class app.Account
   constructor: () ->
-    bind.call()
+    bind()
 
   showPassword = (password_link) ->
     password_input = password_link.next('.password-hidden')
     result_password = password_link.next('.result-password')
-    result_password.css 'top', '0px'
-    result_password.css 'padding-bottom', '48px'
+    result_password.css('top', '0px')
+    result_password.css('padding-bottom', '48px')
     password_input.removeClass('hide')
     setTimeout (->
       password_input.select()
@@ -21,10 +22,10 @@ class app.Account
     ), 80
 
     setTimeout (->
-      $('.result-password').css 'top', '-48px'
-      $('.result-password').css 'padding-bottom', '0px'
+      $('.result-password').css('top', '-48px')
+      $('.result-password').css('padding-bottom', '0px')
       password_link.show()
-      password_input.addClass 'hide'
+      password_input.addClass('hide')
       return
     ), 5000
 

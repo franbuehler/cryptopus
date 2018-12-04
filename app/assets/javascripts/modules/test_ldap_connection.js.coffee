@@ -1,4 +1,4 @@
-# Copyright (c) 2008-2017, Puzzle ITC GmbH.
+# Copyright (c) 2008-2018, Puzzle ITC GmbH.
 # This file is part of Cryptopus and licensed under
 # the Affero General Public License version 3 or later.
 # See the COPYING file at the top-level directory or at
@@ -8,7 +8,7 @@ app = window.App ||= {}
 
 class app.TestLdapConnection
   constructor: () ->
-    bind.call()
+    bind()
 
   test_ldap_connection = (url) ->
     $.ajax({

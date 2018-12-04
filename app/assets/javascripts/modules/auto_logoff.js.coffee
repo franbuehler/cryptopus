@@ -1,5 +1,6 @@
-# Copyright (c) 2008-2017, Puzzle ITC GmbH. This file is part of
-# Cryptopus and licensed under the Affero General Public License version 3 or later.
+# Copyright (c) 2008-2018, Puzzle ITC GmbH.
+# This file is part of Cryptopus and licensed under
+# the Affero General Public License version 3 or later.
 # See the COPYING file at the top-level directory or at
 # https://github.com/puzzle/cryptopus.
 
@@ -10,7 +11,7 @@ class app.AutoLogoff
   remaining_seconds = AUTO_LOGOFF_TIME
 
   constructor: () ->
-    bind.call()
+    bind()
     setInterval(( -> logoff_timer()), 1000)
 
   logoff_timer = () ->
