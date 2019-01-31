@@ -18,7 +18,11 @@ module ApplicationHelper
   end
 
   def nav_link(name, path)
-    class_name = current_page?(path) ? 'active' : ''
+    if path.include?('search') && request.url.include?('search')
+      class_name = 'active'
+    else
+      class_name = current_page?(path) ? 'active' : ''
+    end
 
     content_tag(:li, class: class_name) do
       link_to(name, path)
