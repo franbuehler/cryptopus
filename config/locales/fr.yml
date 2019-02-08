@@ -436,6 +436,7 @@ fr:
         other: "%{count} secondes"
 
   password_strength:
+    no_password: Pas de mot de passe
     weak: Faible
     good: Bon
     strong: Forte

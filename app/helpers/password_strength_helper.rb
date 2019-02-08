@@ -7,10 +7,10 @@ module PasswordStrengthHelper
 
   def password_complexity(username, password)
     strength = PasswordStrength.test(username, password).status
-    return if strength == :invalid
+    strength = :weak if strength == :invalid
 
     filename = "#{strength}.png"
-    text = t "password_strength.#{strength}"
+    text = password.nil? ? t('password_strength.no_password') : t("password_strength.#{strength}")
 
     content = [image_tag(filename, id: 'password_strength')]
     content += [content_tag(:div, text)]

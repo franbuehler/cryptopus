@@ -362,6 +362,7 @@ en:
               taken: Filename is already taken
 
   password_strength:
+    no_password: No password
     weak: Weak
     good: Good
     strong: Strong
