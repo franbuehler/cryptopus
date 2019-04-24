@@ -2,11 +2,15 @@ language: ruby
 cache: bundler
 rvm:
  - 2.2
+services:
+  - docker
 branches:
  only:
   - master
   - stable
 before_install:
+ - docker pull owasp/dependency-check
+ - docker run --volume $TRAVIS_BUILD_DIR:/src --volume $TRAVIS_BUILD_DIR/data:/usr/share/dependency-check/data --volume $TRAVIS_BUILD_DIR/report:/report owasp/dependency-check --scan /src --format "ALL" --project "My OWASP Dependency Check Project" --out /report
  - sudo service mysql restart
 install:
  - bundle install --path vendor/bundle
