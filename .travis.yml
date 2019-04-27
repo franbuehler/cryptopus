@@ -12,9 +12,14 @@ before_install:
  - mkdir data
  - mkdir report
  - chmod 777 data report
- - ls -l $PWD 
  - docker pull owasp/dependency-check
  - docker run --volume $PWD:/src --volume $PWD/data:/usr/share/dependency-check/data --volume $PWD/report:/report owasp/dependency-check --scan /src --format "ALL" --project "Cryptopus OWASP Dependency Check" --out /report
+ - |
+   grep '"vulnerableCount">0<' report/dependency-check-report.html
+    if [[ $? -ne 0 ]]; then
+      echo "ERROR! Vulnerability found by OWASP Dependency Checker. Build aborted. See above."
+      exit 1
+    fi
  - sudo service mysql restart
 install:
  - bundle install --path vendor/bundle
