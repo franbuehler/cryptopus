@@ -19,6 +19,7 @@ before_install:
  - ls $PWD/report/dependency-check-report.html
  - cat $PWD/report/dependency-check-report.html
  - |
+   grep -oh '"vulnerableCount">\d+' $PWD/report/dependency-check-report.html
    grep '"vulnerableCount">0<' $PWD/report/dependency-check-report.html
    if [[ $? -ne 0 ]]; then
      echo "ERROR! Vulnerability found by OWASP Dependency Checker. Build aborted. See above."
