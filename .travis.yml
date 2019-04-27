@@ -12,6 +12,8 @@ before_install:
  - mkdir data
  - mkdir report
  - chmod 777 data report
+ - echo $PWD
+ - ls
  - docker pull owasp/dependency-check
  - docker run --volume $PWD:/src --volume $PWD/data:/usr/share/dependency-check/data --volume $PWD/report:/report owasp/dependency-check --scan /src --format "ALL" --project "Cryptopus OWASP Dependency Check" --out /report
  - ls $PWD/report/dependency-check-report.html
