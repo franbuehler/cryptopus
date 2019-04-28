@@ -15,11 +15,11 @@ before_install:
  - echo $PWD
  - ls
  - docker pull owasp/dependency-check
- - docker run --volume $PWD:/src --volume $PWD/data:/usr/share/dependency-check/data --volume $PWD/report:/report owasp/dependency-check --scan /src --format "ALL" --project "Cryptopus OWASP Dependency Check" --out /report
+ - docker run --volume $PWD/:/src --volume $PWD/data:/usr/share/dependency-check/data --volume $PWD/report:/report owasp/dependency-check --scan /src --format "ALL" --project "Cryptopus OWASP Dependency Check" --out /report
  - ls $PWD/report/dependency-check-report.html
  - cat $PWD/report/dependency-check-report.html
+ - grep -oh '"vulnerableCount">\d+' $PWD/report/dependency-check-report.html
  - |
-   grep -oh '"vulnerableCount">\d+' $PWD/report/dependency-check-report.html
    grep '"vulnerableCount">0<' $PWD/report/dependency-check-report.html
    if [[ $? -ne 0 ]]; then
      echo "ERROR! Vulnerability found by OWASP Dependency Checker. Build aborted. See above."
