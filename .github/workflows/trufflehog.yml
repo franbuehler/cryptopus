@@ -1,0 +1,12 @@
+name: trufflehog secrets scanning
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: trufflehog secrets scanning
+
+    steps:
+        - uses: actions/checkout@master
+        - name: Trufflehog Actions Scan
+          uses: edplato/trufflehog-actions-scan@master
