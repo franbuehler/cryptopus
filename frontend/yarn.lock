@@ -11356,10 +11356,10 @@ testem@^3.1.0:
     tmp "0.0.33"
     xmldom "^0.1.19"
 
-text-security@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/text-security/-/text-security-3.1.1.tgz#855c827b747d3cf1bc160be60dd012f75a29181f"
-  integrity sha512-o8mIakiAYU3NcELbpB48j4Owatk3Fp/L6blWn4+F2RKB5+56VDfSAYfOZ5ulyeQjZJlQzBSvDBC+2XwdP7UowA==
+text-security@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/text-security/-/text-security-3.2.1.tgz#4c3e4eb3a4a1c76c27c144b8ffe0590f24feecdd"
+  integrity sha512-MjDQ3lyLeLqcGqZfQCZ6kvjQiuNfJaicdgIczPJDtD4tj0vIPT8WwIOKTi8wgXCVS/F1WJmapO3SppXemrwbIA==
 
 text-table@^0.2.0:
   version "0.2.0"
