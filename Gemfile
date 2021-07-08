@@ -45,8 +45,8 @@ gem 'webpacker'
 
 group :development, :test do
   gem 'bullet'
-  gem 'capybara'
-  gem 'launchy'
+  gem 'capybara', '>= 3.31.0'
+  gem 'launchy', '>= 2.4.3'
   gem 'rails-erd'
   gem 'rspec-rails', '~> 4.0'
   gem 'rubocop-checkstyle_formatter'
